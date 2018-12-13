@@ -4,7 +4,7 @@ PRJ_NAME="toy_app"
 APP_NAME="toyapp"
 
 
-TAG='date +%s'
+TAG='1.1'
 docker build --tag "$APP_NAME:$TAG" --tag "$APP_NAME:latest" -f Dockerfile .
 REPO_URL="266981040939.dkr.ecr.us-east-1.amazonaws.com/toy-app/$PRJ_NAME/$APP_NAME"
 
