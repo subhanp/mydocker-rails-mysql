@@ -81,3 +81,9 @@ $ docker-machine ip default
 It will display the Ip
 
 ip:3000
+
+
+==============
+jenkins:
+if docker-compose -f docker-compose.yml stop; then docker-compose -f docker-compose.yml rm -f; fi
+docker-compose -f docker-compose.yml pull && docker-compose -f docker-compose.yml up -d
