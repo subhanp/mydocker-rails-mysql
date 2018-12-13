@@ -3,8 +3,10 @@ ENV LANG C.UTF-8
 
 RUN apt-get update && \
     apt-get install -y nodejs \
-                       vim \
+                       nano \
+                       sudo \
                        mysql-client \
+                       mysql-server \
                        --no-install-recommends && \
 rm -rf /var/lib/apt/lists/*
 
@@ -21,9 +23,9 @@ WORKDIR $APP_ROOT
 COPY . $APP_ROOT
 
 #Configure production environment variables
-ENV RAILS_ENV=production     RACK_ENV=production
+#ENV RAILS_ENV=production     RACK_ENV=production
 
 EXPOSE  3000
-Run puma server by default
+#Run puma server by default
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
 #CMD ["rails", "server", "-b", "0.0.0.0"]
