@@ -5,7 +5,6 @@ RUN apt-get update && \
     apt-get install -y nodejs \
                        nano \
                        sudo \
-                       mysql-server \
                        mysql-client \
                        --no-install-recommends && \
 rm -rf /var/lib/apt/lists/*
