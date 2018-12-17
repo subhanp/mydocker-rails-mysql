@@ -28,3 +28,4 @@ EXPOSE  3000
 #Run puma server by default
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
 #CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["rake", "db:migrate"]
