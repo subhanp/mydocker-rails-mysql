@@ -20,14 +20,13 @@ ENV APP_ROOT /workspace
 RUN mkdir -p $APP_ROOT
 WORKDIR $APP_ROOT
 COPY . $APP_ROOT
+RUN rake db:migrate
 
 #Configure production environment variables
 #ENV RAILS_ENV=production     RACK_ENV=production
 
 EXPOSE  3001
-#Running Migrations
-CMD ["rake", "db:migrate"]
 
 #Run puma server by default
-#CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+#CMD ["rails", "server", "-b", "0.0.0.0"]
