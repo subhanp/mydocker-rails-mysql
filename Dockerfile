@@ -24,8 +24,7 @@ COPY . $APP_ROOT
 #Configure production environment variables
 #ENV RAILS_ENV=production     RACK_ENV=production
 
-EXPOSE  3000
+EXPOSE  3001
 #Run puma server by default
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
 #CMD ["rails", "server", "-b", "0.0.0.0"]
-CMD ["rake", "db:migrate"]
