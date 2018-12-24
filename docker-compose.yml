@@ -17,4 +17,3 @@ app:
     - ".:/workspace"
   links:
     - "mysql"
-
